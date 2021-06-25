@@ -1,0 +1,29 @@
+version: "3.3"
+services:
+  app:
+    container_name: docker-node-mongo
+    restart: always
+    build: .
+    ports:
+      - "80:3000"
+    # To be able to edit files, add volume to compose file - npm packages must be installed in directory - npm install
+    volumes: ["./:/usr/src/app"]
+    links:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - "27017:27017"
+  mongoexpress:
+    container_name: mongo-express
+    image: mongo-express
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_AUTH_DATABASE: "docker-node-mongo"
+      ME_CONFIG_BASICAUTH_USERNAME: "admin1"
+      ME_CONFIG_BASICAUTH_PASSWORD: "password1"
+      ME_CONFIG_MONGODB_ADMINUSERNAME: "admin1"
+      ME_CONFIG_MONGODB_ADMINPASSWORD: "password1"
+      ME_CONFIG_MONGODB_ENABLE_ADMIN: "false"
