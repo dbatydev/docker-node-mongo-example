@@ -1,6 +1,30 @@
 # Docker Node MongoDB Example
 
-> Simple example of a dockerized Node/Mongo app
+> Simple example of a Dockerized Node/Mongo app 🐳 👍
+
+## Get Started
+
+To install and run the example, first clone the repository and optionally replace the "dockerExample" directory with your desired name.
+
+```bash
+git clone https://github.com/greatdane89/docker-node-mongo-example.git dockerExample
+```
+
+Next, run the following commands in your CLI to navigate into the proper directory, install the dependencies and start the server. Remember to replace the "dockerExample" directory with your desired name.
+
+```bash
+#Navigate into proper directory
+cd dockerExample
+
+#install dependencies
+npm install
+
+#Run the application
+npm run start
+
+```
+
+Visit http://localhost:3000 in your browser.
 
 ## Commands
 
